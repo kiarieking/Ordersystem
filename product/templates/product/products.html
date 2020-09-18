@@ -1,0 +1,67 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<!-- Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        enter amount
+        <input type="text">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Make Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add product form -->
+create new product
+<form method="post" action="{% url 'add_product' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mx-4">
+        <label for="productname">product name</label>
+        <input type="text" name="productname" id="productname" class="mx-4">
+    </div>
+    <div class="form-group mx-4">
+        <label for="productcost">product cost</label>
+        <input type="text" name="productcost" id="productcost" class="mx-4">
+    </div>
+    <div class="form-group mx-4">
+        <label for="productquantity">product quantity</label>
+        <input type="text" name="productquantity" id="productquantity" class="mx-4">
+    </div>
+    <div class="form-group mx-4">
+        <label for="productimage">product image</label>
+        <input type="file" name="productimage" id="productimage" class="mx-4">
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Save</button>
+</form>
+
+<!-- Product Display -->
+<div class="row mx-2">
+    {% for product in products%}
+
+    <div class="card mx-2 my-2" style="width: 18rem">
+        <a href="{% url 'product_detail' product.id%}">
+        <img src="{{product.productimage.url}}" alt="product image" class="card-img-top" height="280" width="200">
+        </a>
+        <div class="card-body">
+            <h3 class="card-title">{{product.productname}}</h3>
+            <h5 class="card-text">{{product.productcost}}</h5>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#orderModal">Place Order</button>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="alert alert-info" role="alert">
+    you have been logged out of your account
+</div>
+<a href="{% url 'login_form' %}">login again</a>
+
+{% endblock %}

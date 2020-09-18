@@ -1,0 +1,7 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<p>{{ product.productname }}</p>
+<p>{{ product.productcost }}</p>
+<img src="{{product.productimage.url}}" height="280" width="200">
+{% endblock %}
