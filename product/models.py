@@ -11,6 +11,12 @@ class Product(models.Model):
     productquantity = models.IntegerField()
 
 
+class Category(models.Model):
+    categoryname = models.CharField(max_length=200)
+    categoryDescription = models.TextField()
+    categoryImage = models.ImageField
+
+
 class CustomerProduct(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

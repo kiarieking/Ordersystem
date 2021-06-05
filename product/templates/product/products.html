@@ -24,27 +24,7 @@
 </div>
 
 <!-- Add product form -->
-create new product
-<form method="post" action="{% url 'add_product' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-group mx-4">
-        <label for="productname">product name</label>
-        <input type="text" name="productname" id="productname" class="mx-4">
-    </div>
-    <div class="form-group mx-4">
-        <label for="productcost">product cost</label>
-        <input type="text" name="productcost" id="productcost" class="mx-4">
-    </div>
-    <div class="form-group mx-4">
-        <label for="productquantity">product quantity</label>
-        <input type="text" name="productquantity" id="productquantity" class="mx-4">
-    </div>
-    <div class="form-group mx-4">
-        <label for="productimage">product image</label>
-        <input type="file" name="productimage" id="productimage" class="mx-4">
-    </div>
-    <button type="submit" class="btn btn-outline-dark">Save</button>
-</form>
+
 
 <!-- Product Display -->
 <div class="row mx-2">
@@ -58,6 +38,7 @@ create new product
             <h3 class="card-title">{{product.productname}}</h3>
             <h5 class="card-text">{{product.productcost}}</h5>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#orderModal">Place Order</button>
+
         </div>
     </div>
 

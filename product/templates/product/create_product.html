@@ -1,0 +1,21 @@
+create new product
+<form method="post" action="{% url 'add_product' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mx-4">
+        <label for="productname">product name</label>
+        <input type="text" name="productname" id="productname" class="mx-4">
+    </div>
+    <div class="form-group mx-4">
+        <label for="productcost">product cost</label>
+        <input type="text" name="productcost" id="productcost" class="mx-4">
+    </div>
+    <div class="form-group mx-4">
+        <label for="productquantity">product quantity</label>
+        <input type="text" name="productquantity" id="productquantity" class="mx-4">
+    </div>
+    <div class="form-group mx-4">
+        <label for="productimage">product image</label>
+        <input type="file" name="productimage" id="productimage" class="mx-4">
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Save</button>
+</form>
