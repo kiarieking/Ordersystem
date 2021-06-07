@@ -15,7 +15,7 @@
   </button>
   <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav ">
-      <a class="nav-item nav-link text-white" href="#">Home</a>
+      <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
       <a class="nav-item nav-link active text-white" href="{% url 'product' %}">Products <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link text-white"  href="#">Order History</a>
       <a class="nav-item nav-link text-white"  href="#">Payments</a>
@@ -24,9 +24,9 @@
   </div>
    <div class="float-right">
       {% if user.is_authenticated %}
-       <img src="{% static 'media/thiago.jpeg' %}" width="30" height="30">
-       <b class="text-warning mr-4">{{ user.username }}</b>
-       <a href="{% url 'logout' %}" class="text-info mr-2">log out</a>
+       <img src="{% static 'images/user.svg' %}" width="30" height="30">
+       <b class="text-light mr-4">{{ user.username }}</b>
+       <a href="{% url 'logout' %}" class="text-light mr-2">log out</a>
       {% else %}
         <a href="{% url 'login_form' %}">login</a>
         <a href="{% url 'registration_form' %}" >register</a>

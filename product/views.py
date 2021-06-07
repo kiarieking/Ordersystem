@@ -1,8 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Product
+from .models import Product, Category
 
 
 # Create your views here.
+def home(request):
+    return render(request, 'product/home.html')
+
+
+def get_carousel_images(request, id):
+    carousel_img = get_object_or_404(Category, pk=id)
+    context = {"carousel_img": carousel_img}
+    return render(request, 'product/home.html', context)
+
+
 def product_display(request):
     products = Product.objects.all()
     print(products)
