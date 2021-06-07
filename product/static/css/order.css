@@ -1,0 +1,22 @@
+img {
+    width:80%;
+}
+
+#user-svg {
+    width:45px;
+    height:45px;
+}
+
+#home {
+    background-image:url("images/dairy2.jpg");
+}
+
+.card {
+    opacity:0.7;
+    margin: 20px 20px;
+}
+
+.card-img-top{
+    width:60px;
+    height:60px;
+}

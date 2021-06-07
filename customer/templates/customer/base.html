@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>Order System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <!-- Navbar content -->
-    <a class="navbar-brand" href="#">Django Projects</a>
+    <a  href="#">Django Projects</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,7 +25,7 @@
   </div>
    <div class="float-right">
       {% if user.is_authenticated %}
-       <img src="{% static 'images/user.svg' %}" width="30" height="30">
+       <img src="{% static 'images/user.svg' %}" id="user-svg">
        <b class="text-light mr-4">{{ user.username }}</b>
        <a href="{% url 'logout' %}" class="text-light mr-2">log out</a>
       {% else %}
@@ -43,7 +44,7 @@
   <div class="container-fluid text-center text-md-left">
 
     <!-- Grid row -->
-    <div class="row bg-warning">
+    <div class="row bg-dark">
 
       <!-- Grid column -->
       <div class="col-md-6 mt-md-0 mt-3">
