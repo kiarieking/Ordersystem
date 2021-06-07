@@ -4,19 +4,19 @@ from .models import Product, Category
 
 # Create your views here.
 def home(request):
-    return render(request, 'product/home.html')
-
-
-def get_carousel_images(request, id):
-    carousel_img = get_object_or_404(Category, pk=id)
-    context = {"carousel_img": carousel_img}
+    chicken = get_object_or_404(Category, pk=1)
+    dairy = get_object_or_404(Category, pk=2)
+    pig = get_object_or_404(Category, pk=3)
+    context = {'chicken': chicken, 'dairy': dairy, 'pig': pig}
     return render(request, 'product/home.html', context)
 
 
 def product_display(request):
-    products = Product.objects.all()
-    print(products)
-    return render(request, 'product/products.html', {'products': products})
+    chicken_feeds = Product.objects.filter(category__categoryname__contains="Poultry feeds")
+    dairy_feeds = Product.objects.filter(category__categoryname__contains="Dairy Farm feeds")
+    pig_feeds = Product.objects.filter(category__categoryname__contains="Pig Farm feeds")
+    context = {'chicken_feeds': chicken_feeds, 'dairy_feeds': dairy_feeds, 'pig_feeds': pig_feeds}
+    return render(request, 'product/products.html', context)
 
 
 def add_product(request):

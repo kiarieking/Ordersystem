@@ -4,54 +4,57 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<div class="container">
-    <div class="row" id="home">
+<div class="container" id="home">
+    <div>
+        <h1>angro feeds</h1>
+    </div>
+    <div class="row" >
         <div class="card" style="width: 18rem;" id="card">
-              <img class="card-img-top" src="{% static 'images/chicken.png' %}" alt="Card image cap">
+              <img class="card-img-top" src="{{chicken.categoryImage.url}}" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Chicken Feeds</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{{chicken.categoryname}}</h5>
+                <p class="card-text">{{chicken.categoryDescription}}</p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Layers</li>
+                <li class="list-group-item">Growers</li>
+                <li class="list-group-item">Chick Mash</li>
               </ul>
               <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="#" class="btn btn-outline-dark">place order</a>
+                <a href="#" class="btn btn-dark">see more</a>
               </div>
         </div>
         <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'images/cow.png' %}" alt="Card image cap">
+              <img class="card-img-top" src="{{dairy.categoryImage.url}}" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Dairy Feeds</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{{dairy.categoryname}}</h5>
+                <p class="card-text">{{dairy.categoryDescription}}</p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Dairy meal</li>
+                <li class="list-group-item">Maize Germ</li>
+                <li class="list-group-item">Bran</li>
               </ul>
-              <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+               <div class="card-body">
+                <a href="#" class="btn btn-outline-dark">place order</a>
+                <a href="#" class="btn btn-dark">see more</a>
               </div>
         </div>
         <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'images/pig.png'%}" alt="Card image cap">
+              <img class="card-img-top" src="{{pig.categoryImage.url}}" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Pig Farming</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{{pig.categoryname}}</h5>
+                <p class="card-text">{{pig.categoryDescription}}</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
                 <li class="list-group-item">Vestibulum at eros</li>
               </ul>
-              <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+             <div class="card-body">
+                <a href="#" class="btn btn-outline-dark">place order</a>
+                <a href="#" class="btn btn-dark">see more</a>
               </div>
         </div>
     </div>

@@ -4,17 +4,21 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+class Category(models.Model):
+    categoryname = models.CharField(max_length=200)
+    categoryDescription = models.TextField()
+    categoryImage = models.ImageField(upload_to='static/images', default='static/images/3lions.jpeg')
+
+    def __str__(self):
+        return self.categoryname
+
+
 class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,default=1)
     productname = models.CharField(max_length=200)
     productcost = models.IntegerField()
     productimage = models.ImageField()
     productquantity = models.IntegerField()
-
-
-class Category(models.Model):
-    categoryname = models.CharField(max_length=200)
-    categoryDescription = models.TextField()
-    categoryImage = models.ImageField
 
 
 class CustomerProduct(models.Model):

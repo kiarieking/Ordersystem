@@ -4,12 +4,31 @@
 
 
 <!-- Product Display -->
-<div class="row mx-2">
-    {% for product in products%}
+<div class="row mx-2" id="chicken">
+    <h2></h2>
+    {% for product in chicken_feeds %}
 
     <div class="card mx-2 my-2" style="width: 18rem">
         <a href="{% url 'product_detail' product.id%}">
-        <img src="{{product.productimage.url}}" alt="product image" class="card-img-top" height="280" width="200">
+        <img src="{{product.productimage.url}}" alt="product image" class="card-img-top2" height="200" width="200">
+        </a>
+        <div class="card-body">
+            <h3 class="card-title">{{product.productname}}</h3>
+            <h5 class="card-text">{{product.productcost}}</h5>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#orderModal">Place Order</button>
+
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+<div class="row mx-2" id="dairy">
+    {% for product in dairy_feeds%}
+
+    <div class="card mx-2 my-2" style="width: 18rem">
+        <a href="{% url 'product_detail' product.id%}">
+        <img src="{{product.productimage.url}}" alt="product image" class="card-img-top2" height="200" width="200">
         </a>
         <div class="card-body">
             <h3 class="card-title">{{product.productname}}</h3>
