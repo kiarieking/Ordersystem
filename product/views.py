@@ -15,7 +15,11 @@ def product_display(request):
     chicken_feeds = Product.objects.filter(category__categoryname__contains="Poultry feeds")
     dairy_feeds = Product.objects.filter(category__categoryname__contains="Dairy Farm feeds")
     pig_feeds = Product.objects.filter(category__categoryname__contains="Pig Farm feeds")
-    context = {'chicken_feeds': chicken_feeds, 'dairy_feeds': dairy_feeds, 'pig_feeds': pig_feeds}
+    chicken = get_object_or_404(Category, pk=1)
+    dairy = get_object_or_404(Category, pk=2)
+    pig = get_object_or_404(Category, pk=3)
+    context = {'chicken_feeds': chicken_feeds, 'dairy_feeds': dairy_feeds, 'pig_feeds': pig_feeds
+               ,'chicken': chicken, 'dairy': dairy, 'pig': pig}
     return render(request, 'product/products.html', context)
 
 
