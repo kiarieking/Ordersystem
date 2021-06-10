@@ -9,6 +9,7 @@
         <h1>angro feeds</h1>
     </div>
     <div class="row" >
+        <a href="{% url 'product'%}" id="card-poultry">
         <div class="card" style="width: 18rem;" id="card">
               <img class="card-img-top" src="{{chicken.categoryImage.url}}" alt="Card image cap">
               <div class="card-body">
@@ -25,6 +26,8 @@
                 <a href="#" class="btn btn-dark">see more</a>
               </div>
         </div>
+            </a>
+        <a href="{% url 'product'%}" id="card-dairy">
         <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="{{dairy.categoryImage.url}}" alt="Card image cap">
               <div class="card-body">
@@ -41,6 +44,8 @@
                 <a href="#" class="btn btn-dark">see more</a>
               </div>
         </div>
+        </a>
+        <a href="{% url 'product'%}" id="card-pig">
         <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="{{pig.categoryImage.url}}" alt="Card image cap">
               <div class="card-body">
@@ -57,6 +62,7 @@
                 <a href="#" class="btn btn-dark">see more</a>
               </div>
         </div>
+        </a>
     </div>
 </div>
 

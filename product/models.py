@@ -20,6 +20,9 @@ class Product(models.Model):
     productimage = models.ImageField()
     productquantity = models.IntegerField()
 
+    def __str__(self):
+        return self.productname
+
 
 class CustomerProduct(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE)

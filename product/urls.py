@@ -9,7 +9,8 @@ urlpatterns = [
     path('product/add_product', views.add_product, name='add_product'),
     path('product/<int:id>/product_detail', views.product_detail, name='product_detail'),
     path('product/place_order', views.place_order, name='place_order'),
-    path('product/dairy_order', views.dairy_order, name='dairy_order')
+    path('product/dairy_order', views.dairy_order, name='dairy_order'),
+    path('product/total_order', views.total_order, name='total_order'),
 
 ]
 if settings.DEBUG:

@@ -49,4 +49,4 @@ def dairy_order(request):
 
 def total_order(request):
 
-    return render(request, '')
+    return render(request)

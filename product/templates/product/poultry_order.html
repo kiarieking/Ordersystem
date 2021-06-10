@@ -3,7 +3,7 @@
 <h1>place order</h1>
 <div class="row">
   <div class="column">
-      <form method="post" action="{% url 'register' %}">
+      <form method="post" action="#">
         {%csrf_token%}
         <div class="form-group">
           <label for="layers">Layers</label>
@@ -18,7 +18,7 @@
           <input type="text" name="growers" class="form-control" id="growers" aria-describedby="emailHelp" style="width:40%" required>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-outline-dark" id="totalbtn">get total</button>
+          <a class="btn btn-outline-dark" id="totalbtn" href="{%url 'total_order'%}">get total</a>
           <button type="submit" class="btn btn-dark" id="orderbtn">order</button>
         </div>
 
@@ -26,7 +26,7 @@
     </div>
     <div class="column">
       <h1>Total</h1>
-      <h3>8900</h3>
+      <h3>{{total}}</h3>
 
     </div>
 </div>
