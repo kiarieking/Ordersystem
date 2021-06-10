@@ -16,13 +16,16 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-    <div class="navbar-nav ">
-      <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
-      <a class="nav-item nav-link active text-white" href="{% url 'product' %}">Products <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link text-white"  href="#">Order History</a>
-      <a class="nav-item nav-link text-white"  href="#">Payments</a>
+      {% with url_name=request.resolver_match.url_name%}
+    <div class="nav nav-tabs ">
+      <a class="nav-item nav-link text-white {% if url_name == 'home' %}active text-dark{% endif %}" href="{% url 'home' %}">Home</a>
+      <a class="nav-item nav-link text-white {% if url_name == 'product' %}active text-dark{% endif %}" href="{% url 'product' %}">Products <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link text-white {% if url_name == '#' %}active text-dark{% endif %}"  href="#">Order History</a>
+      <a class="nav-item nav-link text-white "  href="#">Payments</a>
       <a class="nav-item nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </div>
+              {% endwith %}
+
   </div>
    <div class="float-right">
       {% if user.is_authenticated %}
