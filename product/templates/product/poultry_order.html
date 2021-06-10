@@ -1,0 +1,34 @@
+{% extends 'product/place_order.html' %}
+{% block order %}
+<h1>place order</h1>
+<div class="row">
+  <div class="column">
+      <form method="post" action="{% url 'register' %}">
+        {%csrf_token%}
+        <div class="form-group">
+          <label for="layers">Layers</label>
+          <input type="text" name="layers" class="form-control" id="layers" aria-describedby="emailHelp" required>
+        </div>
+        <div class="form-group">
+          <label for="chick_mash">Growers</label>
+          <input type="text" name="chick_mash" class="form-control" id="chick_mash" aria-describedby="emailHelp" required>
+        </div>
+        <div class="form-group">
+          <label for="growers">Chick Mash</label>
+          <input type="text" name="growers" class="form-control" id="growers" aria-describedby="emailHelp" style="width:40%" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-dark" id="totalbtn">get total</button>
+          <button type="submit" class="btn btn-dark" id="orderbtn">order</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="column">
+      <h1>Total</h1>
+      <h3>8900</h3>
+
+    </div>
+</div>
+
+{% endblock %}

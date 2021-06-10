@@ -37,3 +37,16 @@ def product_detail(request, id):
     product = get_object_or_404(Product, pk=id)
     context = {'product': product}
     return render(request, 'product/product_detail.html', context)
+
+
+def place_order(request):
+    return render(request, 'product/poultry_order.html')
+
+
+def dairy_order(request):
+    return render(request, 'product/dairy_order.html')
+
+
+def total_order(request):
+
+    return render(request, '')

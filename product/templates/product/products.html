@@ -16,7 +16,7 @@
         <div class="card-body">
             <h3 class="card-title">{{product.productname}}</h3>
             <h5 class="card-text">{{product.productcost}}</h5>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#orderModal">Place Order</button>
+            <a class="btn btn-info" href="{% url 'place_order'%}">place order</a>
 
         </div>
     </div>
@@ -35,7 +35,7 @@
         <div class="card-body">
             <h3 class="card-title">{{product.productname}}</h3>
             <h5 class="card-text">{{product.productcost}}</h5>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#orderModal">Place Order</button>
+            <a class="btn btn-info" href="{% url 'dairy_order'%}">place order</a>
 
         </div>
     </div>

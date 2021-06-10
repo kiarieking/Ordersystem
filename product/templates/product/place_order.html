@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'customer/base.html' %}
+{% block content %}
+    <h2>place order</h2>
+{% with url_name=request.resolver_match.url_name%}
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link {% if url_name == 'place_order' %}active{% endif %}" href="{% url 'place_order'%}">Poultry</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if url_name == 'dairy_order' %}active{% endif %}" href="{% url 'dairy_order'%}">Dairy</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Piggery</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Supplements</a>
+  </li>
+</ul>
+{% endwith %}
+{% block order%}
 
-</body>
-</html>
+{% endblock %}
+{% endblock %}
